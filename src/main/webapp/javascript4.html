@@ -7,17 +7,18 @@
 <style>
 #run {
 position:absolute;
- height:84px;
- border:2px solid red;
+height:50px;
+border:2px solid red;
 }
 </style>
 </head>
 <body>
-<div id="run" style="top:100px; left:100px;" onmouseover="mover();" onmouseout="mout();">나 잡아봐라</div>
+<div id="run" style="top:50px; left:50px;" onmouseover="mover();" onmouseout="mout();">
+<img style= "width:100px; hidth:100px;" src = "https://file.namu.moe/file/d37e20309802fc1c72c098d5fb9d1fd59ada9969ae278b2c7aff911ba844d4b9"></div>
 <!-- javascript 코드 입력 -->
 <script>
 function mover() {
-	document.getElementById("run").style.top = (Math.random()*1000)+"px";
+	document.getElementById("run").style.top = (Math.random()*600)+"px";
 	document.getElementById("run").style.left = (Math.random()*1000)+"px";
 	//console.log("top: "+top+", left: "+left); .
 }
