@@ -7,25 +7,23 @@
 <style>
 #run {
 position:absolute;
- top:100px;
- left:100px;
  height:84px;
  border:2px solid red;
 }
 </style>
 </head>
 <body>
-<div id="run" onmouseover="mover();" onmouseout="mout();">나 잡아봐라</div>
+<div id="run" style="top:100px; left:100px;" onmouseover="mover();" onmouseout="mout();">나 잡아봐라</div>
 <!-- javascript 코드 입력 -->
 <script>
 function mover() {
-	let top = document.getElementById("run").style.top;
-	let left = document.getElementById("run").style.left;
-	console.log("top: "+top+", left: "+left);
+	document.getElementById("run").style.top = (Math.random()*1000)+"px";
+	document.getElementById("run").style.left = (Math.random()*1000)+"px";
+	//console.log("top: "+top+", left: "+left);
 }
 
 function mout() {
-	console.log("Out");
+	console.log("Out: "+(Math.random()*1000));
 }
 </script>
 </body>

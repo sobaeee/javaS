@@ -2,21 +2,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>전구</title>
 <!-- javascript 코드 입력 -->
 </head>
 <body>
-<p id="demo" style="font-size:40px">
-javascript 코드 입력
-</p>
-<!-- javascript 코드 입력 -->
-<script>
-document.getElementById("demo").style.display = "block";
-document.getElementById("demo").innerHTML = "hello javascript!";
-console.log('기본');
-console.info('정보');
-console.warn('경고');
-console.error('에러');
-</script>
+	<button onclick="on()">Turn On</button>
+	<img src="img/pic_bulboff.gif" alt="전구" id="bulb">
+	<button onclick="off()">Turn Off</button>
+	<button onclick="toggle()">토글</button>
+	<!-- javascript 코드 입력 -->
+	<script>
+		function on() {
+			//var img = document.images[0].src;
+			document.getElementById("bulb").src = "img/pic_bulbon.gif";
+			
+			console.log("온");
+		}
+
+		function off() {
+			document.getElementById("bulb").src = "img/pic_bulboff.gif";
+			console.log("오프");
+		}
+		
+		function toggle() { 
+			if(document.getElementById("bulb").src == "http://localhost:8080/js/img/pic_bulboff.gif") {
+				on();
+			} else {
+				off();
+			}
+		}
+	</script>
 </body>
 </html>
