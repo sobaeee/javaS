@@ -15,11 +15,17 @@ position:absolute;
 </style>
 </head>
 <body>
-<div id="run" onmouseover="mover();">나 잡아봐라</div>
+<div id="run" onmouseover="mover();" onmouseout="mout();">나 잡아봐라</div>
 <!-- javascript 코드 입력 -->
 <script>
 function mover() {
-	console.log("Over")
+	let top = document.getElementById("run").style.top;
+	let left = document.getElementById("run").style.left;
+	console.log("top: "+top+", left: "+left);
+}
+
+function mout() {
+	console.log("Out");
 }
 </script>
 </body>
