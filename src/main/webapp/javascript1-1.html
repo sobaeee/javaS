@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- javascript 코드 입력 -->
+</head>
+<body>
+<h1 id="num">0</h1>
+<button id = "up" onclick="numUp(); this.disabled=true;">증가버튼</button>
+<button id = "down" onclick="numDown(); this.disabled=true;">감소버튼</button>
+<button onclick="numShutdown()">중지버튼</button>
+<button onclick="numReset()">리셋버튼</button>
+<!-- this.disabled=true; << 추가하면 증가버튼을 한번만 누를 수 있다.  -->
+
+<!-- 증가버튼을 한번만 눌러면 1초마다 자동으로 증가된다. -->
+<script>
+let i = 0;
+let timer, timer2;
+
+function numReset(){
+	numStop(timer);
+	numStop(timer2);
+	console.log("리셋합니다.");
+	document.getElementById("num").innerHTML = 0;
+	i = 0;
+	document.getElementById("up").disabled = false;
+	document.getElementById("down").disabled = false;
+}
+
+function numShutdown(){
+	numStop(timer);
+	numStop(timer2);
+	console.log("중지합니다.");
+	document.getElementById("up").disabled = false;
+	document.getElementById("down").disabled = false;
+}
+
+function numUp(){
+	i++;
+	document.getElementById("num").innerHTML = i;
+	timer = setTimeout(numUp, 1000);
+	console.log("증가합니다.");
+}
+
+function numDown(){
+	numStop(timer);
+	i--;
+	document.getElementById("num").innerHTML = i;
+	timer2 = setTimeout(numDown, 1000);
+	console.log("감소합니다.");
+}
+
+
+/* clearTimeout => 중지를 시켜줌 */
+function numStop(t){
+	clearTimeout(t);
+}
+
+</script>
+</body>
+</html>
+
+

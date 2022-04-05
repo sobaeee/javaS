@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- javascript 코드 입력 -->
+</head>
+<body>
+<h1 id="num">0</h1>
+<button onclick="numUp()">증가버튼</button>
+
+<!-- 증가 버튼을 클릭할때마다 하나씩 증가함. let i = 0;을 아래 함수 밑으로 두면 1이 뜨지만 밖으로 꺼내면 숫자가 증가한다. -->
+<script>
+let i = 0;
+
+function numUp(){
+	i++;
+	document.getElementById("num").innerHTML = i;
+	console.log("numUp 함수가 호출되었습니다.");
+}
+</script>
+</body>
+</html>
